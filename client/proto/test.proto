@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+// Esto es un parton en SERVIDOR contestando al cliente
+// El siguiente patron es cuando el cliente espera una secuencia de mensajes
+// por parte del servidor y lee hasta que no haya mas mensajes
+// rpc Saluda (Saludo) returns (stream Despedida) {}
+
+// Este es un patron de CLIENTE mandando al servidor 
+// rpc Saluda (stream Saludo) returns (Despedida) {}
+
+// Este patron es bidireccional
+// rpc Saluda (stream Saludo) returns (Despedida) {}
+
+message Client {
+	double t1 = 1;
+	double t3 = 2;
+}
+
+message Server {
+	double t2 = 1;
+}
+
+// Request and Response
+// Este es el patron donde el cliente manda un request al server
+// usando el Stub and Waits
+service OffsetService {
+	rpc GetOffset (Client) returns (Server) {}
+} 

@@ -1,0 +1,10 @@
+{
+    "version": 4,
+    "vendor": {
+        "conan": {}
+    },
+    "include": [
+        "A:\\personal\\cmasMas\\clientGRPC\\build\\CMakePresets.json",
+        "build/CMakePresets.json"
+    ]
+}
