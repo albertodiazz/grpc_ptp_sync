@@ -9,10 +9,11 @@ set(grpc_pb_cc ${proto_folder}/test.grpc.pb.cc)
 set(grpc_pb_h ${proto_folder}/test.grpc.pb.h)
 set(pb_cc ${proto_folder}/test.pb.cc)
 set(pb_h ${proto_folder}/test.pb.h)
+set(PROTOC_CONAN /home/alffy/.conan2/p/b/proto660ba8a148420/p/bin/protoc)
 
 add_custom_command(
 	OUTPUT ${grpc_pb_h} ${grpc_pb_cc} ${pb_cc} ${pb_h}
-	COMMAND protoc	
+	COMMAND ${PROTOC_CONAN} 
 	ARGS -I ${proto_folder}
 	--cpp_out=${proto_folder}
 	--grpc_out=${proto_folder}
