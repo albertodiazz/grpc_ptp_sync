@@ -31,11 +31,13 @@ find_package(gRPC CONFIG REQUIRED)
 
 set(SOURCES
 	src/main.cpp
+	${grpc_p_cc}
+	${pb_cpp}
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-# target_include_directories(${PROJECT_NAME} proto)
+target_include_directories(${PROJECT_NAME} PUBLIC ${PROTO_FOLDER})
 
 target_link_libraries(${PROJECT_NAME} 
 	protobuf::protobuf

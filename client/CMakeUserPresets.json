@@ -4,7 +4,7 @@
         "conan": {}
     },
     "include": [
-        "A:\\personal\\cmasMas\\clientGRPC\\build\\CMakePresets.json",
-        "build/CMakePresets.json"
+        "build/CMakePresets.json",
+        "Debug/CMakePresets.json"
     ]
 }
