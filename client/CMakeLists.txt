@@ -17,7 +17,7 @@ set(pb_h ${PROTO_FOLDER}/test.pb.h)
 get_target_property(grpc_cpp_plugin_location gRPC::grpc_cpp_plugin LOCATION)
 
 add_custom_command(
-	OUTPUT ${grpc_p_h} ${grpc_p_cc}
+	OUTPUT ${grpc_p_h} ${grpc_p_cc} ${pb_cpp} ${pb_h} 
 	COMMAND protoc 
 	ARGS -I ${PROTO_FOLDER} 
 	--grpc_out=${PROTO_FOLDER} 
@@ -38,7 +38,6 @@ set(SOURCES
 	${grpc_p_cc}
 	${pb_cpp}
 )
-
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${PROTO_FOLDER})

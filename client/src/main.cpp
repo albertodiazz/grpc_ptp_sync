@@ -40,7 +40,7 @@ class SendRequest : public OffsetService::Service {
 				return "Todo Ok";
 			}
 			else {
-				return status.error_message();
+				return status.error_details();
 			}
 		}
 
@@ -51,7 +51,7 @@ class SendRequest : public OffsetService::Service {
 int main(void){
 	// TODO: DEV
 	// Hay que hacer la conexion con servidor
-	SendRequest cliente(grpc::CreateChannel("10.90.125.35:50051", grpc::InsecureChannelCredentials()));
+	SendRequest cliente(grpc::CreateChannel("0.0.0.0:50051", grpc::InsecureChannelCredentials()));
 	cliente.SendMsg();
 	return EXIT_SUCCESS;
 }
