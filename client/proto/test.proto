@@ -12,7 +12,8 @@ syntax = "proto3";
 // rpc Saluda (stream Saludo) returns (Despedida) {}
 
 message Client {
-	double t3 = 1;
+	double t2 = 1;
+	double t3 = 2;
 }
 
 message Server {
