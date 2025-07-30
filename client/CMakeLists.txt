@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.15)
 
 project(clientGRPC)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 set(grpc_PACKAGE_FOLDER_RELEASE "C:/Users/alffy/.conan2/p/b/grpc12cdb121bde5b/p")
 set(PROTO_FOLDER ${CMAKE_SOURCE_DIR}/proto)
 
